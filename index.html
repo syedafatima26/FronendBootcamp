@@ -7,25 +7,33 @@
 </head>
 <body>
     <h1>Welcome to the Coffee Shop</h1>
-    <p id="discountMessage"></p>
+
+    <p id="discountMessage1"></p>
+    <p id="discountMessage2"></p>
+    <p id="discountMessage3"></p>
+    <p id="discountMessage4"></p>
 
     <script>
-        let age = 22;
-        let isStudent = false; 
+        let customer1 = { age: 70, isStudent: false }; 
+        let customer2 = { age: 22, isStudent: true };  
+        let customer3 = { age: 30, isStudent: false }; 
+        let customer4 = { age: 19, isStudent: true };  
+
 
         function checkDiscount(age, isStudent) {
-            let message;
             if (age >= 65) {
-                message = "You get a 10% discount";
+                return "You get a 10% discount";
             } else if (age >= 18 && age <= 25 && isStudent) {
-                message = "You get a 5% discount";
+                return "You get a 5% discount";
             } else {
-                message = "No discount";
+                return "No discount";
             }
-            document.getElementById("discountMessage").innerText = message;
         }
 
-        checkDiscount(age, isStudent);
+        document.getElementById("discountMessage1").innerText = "Customer 1: " + checkDiscount(customer1.age, customer1.isStudent);
+        document.getElementById("discountMessage2").innerText = "Customer 2: " + checkDiscount(customer2.age, customer2.isStudent);
+        document.getElementById("discountMessage3").innerText = "Customer 3: " + checkDiscount(customer3.age, customer3.isStudent);
+        document.getElementById("discountMessage4").innerText = "Customer 4: " + checkDiscount(customer4.age, customer4.isStudent);
     </script>
 </body>
 </html>
