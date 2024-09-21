@@ -3,32 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syeda Fatima Mansoor-1045</title>
+    <title>Coffee Shop Discount</title>
 </head>
 <body>
-    <h1>My Favorite Hobbies</h1>
-    <p>This list shows some of my favorite hobbies that I enjoy doing in my free time.</p>
-    <ul>
-        <li>Designing</li>
-        <li>Racing</li>
-        <li>Gardening</li>
-        <li>Traveling</li>
-    </ul>
-    <h1>My Favorite Food</h1>
-    <p>This list shows some of my favorite hobbies that I enjoy doing in my free time.</p>
-    <ul>
-        <li>Chinese</li>
-        <li>Italian</li>
-        <li>Japanese</li>
-    </ul>
-    <h1>My Favorite Dessert</h1>
-    <p>This list shows some of my favorite hobbies that I enjoy doing in my free time.</p>
-    <ul>
-        <li>Brownies</li>
-        <li>Lava Cake</li>
-        <li>Apple Pie</li>
-        <li>Semnal roll</li>
-        <li>Tarts</li>
-    </ul>
+    <h1>Welcome to the Coffee Shop</h1>
+    <p id="discountMessage"></p>
+
+    <script>
+        let age = 22;
+        let isStudent = false; 
+
+        function checkDiscount(age, isStudent) {
+            let message;
+            if (age >= 65) {
+                message = "You get a 10% discount";
+            } else if (age >= 18 && age <= 25 && isStudent) {
+                message = "You get a 5% discount";
+            } else {
+                message = "No discount";
+            }
+            document.getElementById("discountMessage").innerText = message;
+        }
+
+        checkDiscount(age, isStudent);
+    </script>
 </body>
 </html>
